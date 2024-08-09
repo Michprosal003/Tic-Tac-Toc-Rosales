@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #2b2b2b; /* Fondo oscuro elegante */
+            color: #f0e6d2; /* Texto en color dorado claro */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #main-container {
+            text-align: center;
+            margin-bottom: 20px; /* Espacio debajo del contenedor principal */
+        }
+
+        #dialog, #timer, #score {
+            background-color: #3e3e3e; /* Fondo de diálogo oscuro */
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 16px;
+            width: 90%; /* Ancho adaptable */
+            max-width: 250px; /* Ancho máximo */
+            box-sizing: border-box; /* Incluye padding dentro del ancho total */
+        }
+
+        #timer {
+            margin-bottom: 30px; /* Espacio adicional debajo del cuadro de tiempo restante */
+            margin-top: 20px; /* Espacio adicional arriba del cuadro de tiempo restante */
+        }
+
+        input[type="text"], button {
+            width: 90%; /* Ancho adaptable */
+            max-width: 150px; /* Ancho máximo */
+            height: 40px; /* Altura pequeña */
+            padding: 5px;
+            margin: 5px 0;
+            font-size: 14px;
+            border: 1px solid #8c7851; /* Borde dorado oscuro */
+            border-radius: 5px;
+            box-sizing: border-box; /* Incluye padding dentro del ancho total */
+            background-color: #4e4e4e; /* Fondo del cuadro de texto y botones */
+            color: #f0e6d2; /* Texto dorado claro */
+        }
+
+        button {
+            background-color: #8c7851; /* Botones dorado oscuro */
+            color: #ffffff; /* Texto blanco */
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: inline-block;
+            text-align: center;
+        }
+
+        button:hover {
+            background-color: #a89060; /* Efecto hover más claro */
+        }
+
+        button:active {
+            background-color: #705936; /* Efecto al hacer click */
+        }
+
+        #board {
+            display: grid;
+            grid-template-columns: repeat(3, 80px); /* Ajusta el tamaño de las celdas */
+            grid-gap: 10px;
+            margin-top: 20px;
+        }
+
+        .cell {
+            background-color: #4e4e4e; /* Celdas de tablero gris oscuro */
+            color: #f0e6d2; /* Texto dorado claro */
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px; /* Tamaño pequeño para las celdas */
+            height: 80px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cell:hover {
+            background-color: #5e5e5e; /* Efecto hover celdas */
+        }
+
+        /* Media Queries para dispositivos móviles */
+        @media (max-width: 768px) {
+            #board {
+                grid-template-columns: repeat(3, 60px); /* Reduce el tamaño de las celdas en pantallas más pequeñas */
+            }
+
+            .cell {
+                width: 60px; /* Tamaño pequeño para las celdas */
+                height: 60px;
+                font-size: 24px; /* Ajusta el tamaño del texto */
+            }
+
+            input[type="text"], button {
+                width: 80%; /* Ancho adaptable en pantallas más pequeñas */
+                max-width: none; /* Elimina el ancho máximo */
+            }
+
+            #dialog, #timer, #score {
+                width: 90%; /* Ancho adaptable */
+                max-width: none; /* Elimina el ancho máximo */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="main-container">
+        <!-- Contenedor principal ahora sin imagen -->
+    </div>
+    
+    <div id="dialog"></div>
+    <div id="board"></div>
+    <div id="timer">Tiempo restante: 15s</div>
+    <div id="score">Puntos: 0</div>
+
+    <input type="text" id="nameInput" placeholder="Escribe tu nombre" style="display:none;">
+    <button id="submitResponseButton" style="display:none;">Enviar</button>
+    <button id="tipButton">Dar propina</button>
+    <button id="wakeButton">Despertar al robot</button>
+    <button id="yesButton" style="display:none;">Sí</button>
+    <button id="noButton" style="display:none;">No</button>
+    <button id="resetButton">Reiniciar</button>
+    
+    <script src="script.js"></script>
+</body>
+</html>
